@@ -1,18 +1,22 @@
 let thumbnail = document.getElementById('thumbnailId');
-let width = thumbnail.clientWidth;
-let height = thumbnail.clientHeight;
 let hoverEl = document.getElementById('hoverId');
-let widthpx = width.toString()+'px';
-let heightpx = height.toString()+'px';
-hoverEl.style.width = widthpx;
-hoverEl.style.height = heightpx;
+// let width = thumbnail.clientWidth;
+// let height = thumbnail.clientHeight;
+// let widthpx = '';
+// widthpx += width.toString();
+// widthpx += 'px';
+// let heightpx = '';
+// heightpx += height.toString();
+// heightpx += 'px';
+// hoverEl.style.width = widthpx;
+// hoverEl.style.height = heightpx;
 let slider = document.getElementById('sliderId');
-hoverEl.addEventListener('click', () => {
-    slider.style.display = 'block';
-    slider.style.visibility = 'visible';
-    slider.style.opacity = '1';
-    hoverEl.style.display = 'none';
-})
+// hoverEl.addEventListener('click', () => {
+//     slider.style.display = 'block';
+//     slider.style.visibility = 'visible';
+//     slider.style.opacity = '1';
+//     hoverEl.style.display = 'none';
+// })
 
 function hid() {
     hoverEl.style.display = 'flex';
@@ -116,4 +120,21 @@ for(let i = 0; i < total; i++) {
 }
 images.forEach(el => {
     console.log(el);
+})
+let width = thumbnail.clientWidth;
+let height = thumbnail.clientHeight;
+// let hoverEl = document.getElementById('hoverId');
+let widthpx = '';
+widthpx += width.toString();
+widthpx += 'px';
+let heightpx = '';
+heightpx += height.toString();
+heightpx += 'px';
+hoverEl.style.width = widthpx;
+hoverEl.style.height = heightpx;
+hoverEl.addEventListener('click', () => {
+    slider.style.display = 'block';
+    slider.style.visibility = 'visible';
+    slider.style.opacity = '1';
+    hoverEl.style.display = 'none';
 })
