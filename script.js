@@ -2,9 +2,10 @@ let thumbnail = document.getElementById('thumbnailId');
 let width = thumbnail.clientWidth;
 let height = thumbnail.clientHeight;
 let hoverEl = document.getElementById('hoverId');
-hoverEl.style.width = ''+width+'px';
-hoverEl.style.height = ''+height+'px';
-// hoverEl.innerText = 'jfljf';
+let widthpx = width.toString()+'px';
+let heightpx = height.toString()+'px';
+hoverEl.style.width = widthpx;
+hoverEl.style.height = heightpx;
 let slider = document.getElementById('sliderId');
 hoverEl.addEventListener('click', () => {
     slider.style.display = 'block';
@@ -29,7 +30,6 @@ let captions = [];
 let images = [];
 for(let i = 1; i < slider.childNodes.length; i+=2) {
     allImages.push(slider.childNodes[i]);
-    // allImages[allImages.length-1].classList.add('invisible');
     allImages[allImages.length-1].style.display = 'none';
     captions[allImages.length-1] = allImages[allImages.length-1].childNodes[3].childNodes[3];
     images[allImages.length-1] = allImages[allImages.length-1].childNodes[3].childNodes[1];
@@ -56,30 +56,6 @@ allImages.forEach(el => {
 });
 allButtons.forEach(el => console.log(el));
 
-// function addNext(el, at) {
-//     allImages[at].classList.toggle('visible');
-//     captions[at].classList.remove('visible');
-//     setTimeout(() => {
-//         allImages[at].style.display = 'none';
-//     }, 510);
-//     at++;
-//     at %= total;
-//     allImages[at].style.display = 'flex';
-//     allImages[at].classList.toggle('visible');
-// }
-
-// function addPrev(el,at) {
-//     allImages[at].classList.toggle('visible');
-//     setTimeout(() => {
-//         allImages[at].style.display = 'none';
-//     }, 510);
-//     at--;
-//     at %= total;
-//     at += total;
-//     at %= total;
-//     allImages[at].style.display = 'flex';
-//     allImages[at].classList.toggle('visible');
-// }
 
 for(let i = 0; i < allButtons.length; i++) {
     allButtons[i][0].addEventListener('mouseover', () => {
@@ -128,19 +104,12 @@ for(let i = 0; i < allButtons.length; i++) {
             captions[at].style.display = 'block';
             captions[at].classList.add('visible');
             captions[at].classList.remove('bottom');
-            // console.log(allImages[at].style.display);
         }, 510);
-        // console.log(allImages[at].style.display);
-        // at++;
-        // at %= total;
-        // allImages[at].style.display = 'flex';
-        // allImages[at].classList.toggle('visible');
     });
 }
 
 for(let i = 0; i < total; i++) {
     images[i].addEventListener('click',() => {
-        // captions[i].style.display = 'block'
         captions[i].classList.toggle('visible');
         captions[i].classList.toggle('bottom');
     })
